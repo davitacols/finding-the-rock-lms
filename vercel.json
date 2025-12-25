@@ -1,29 +1,29 @@
 {
   "version": 2,
-  "name": "finding-the-rock",
+  "name": "finding-the-rock-api",
   "builds": [
     {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
+      "src": "backend/server.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "/api/(.*)",
+      "dest": "backend/server.js"
     }
   ],
   "env": {
-    "REACT_APP_API_URL": "https://your-backend-url.com/api",
-    "REACT_APP_AWS_REGION": "us-east-1",
-    "REACT_APP_COGNITO_USER_POOL_ID": "us-east-1_F6mrWuxuI",
-    "REACT_APP_COGNITO_CLIENT_ID": "21ercn6i5emt61re8fsmk32t14"
+    "NODE_ENV": "production",
+    "DB_HOST": "dev-lms-db.ca968o2wg9ep.us-east-1.rds.amazonaws.com",
+    "DB_PORT": "5432",
+    "DB_NAME": "lmsdb",
+    "DB_USER": "lmsadmin",
+    "DB_PASSWORD": "SecureLMS2024!",
+    "AWS_REGION": "us-east-1",
+    "S3_BUCKET_NAME": "dev-lms-content-290958055168",
+    "COGNITO_USER_POOL_ID": "us-east-1_F6mrWuxuI",
+    "COGNITO_CLIENT_ID": "21ercn6i5emt61re8fsmk32t14",
+    "JWT_SECRET": "your_super_secure_jwt_secret_key_here_2024"
   }
 }
