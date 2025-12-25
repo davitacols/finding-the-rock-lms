@@ -1,0 +1,16 @@
+{
+  "name": "amplify-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node --enable-source-maps dist/backend.js"
+  },
+  "dependencies": {
+    "@aws-amplify/backend": "^0.15.0",
+    "@aws-amplify/backend-cli": "^0.15.0"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend-cli": "latest",
+    "typescript": "^5.0.0"
+  }
+}

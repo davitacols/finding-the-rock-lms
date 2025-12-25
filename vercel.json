@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "name": "finding-the-rock",
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "https://your-backend-url.com/api",
+    "REACT_APP_AWS_REGION": "us-east-1",
+    "REACT_APP_COGNITO_USER_POOL_ID": "us-east-1_F6mrWuxuI",
+    "REACT_APP_COGNITO_CLIENT_ID": "21ercn6i5emt61re8fsmk32t14"
+  }
+}
